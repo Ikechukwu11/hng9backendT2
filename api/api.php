@@ -18,7 +18,7 @@
         $x = ($_POST['x'] ? $_POST['x'] : $data['x']);
         $y = ($_POST['y'] ? $_POST['y'] : $data['y']);
         
-        if($operatin_type==='' || !in_array($operation_type, $operands)){
+        if($operation_type==='' || !in_array($operation_type, $operands)){
             die( json_encode(['error' => 'INVALID OPERATION TYPE']));
         }
         
