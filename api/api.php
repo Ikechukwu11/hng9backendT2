@@ -14,9 +14,9 @@
 
         $slackUsername="kekesmovic";
         $operands= array('addition','subtraction','multiplication');
-        $operation_type = (strtolower($_POST['operation_type']) ? strtolower($_POST['operation_type']) : strtolower($data['operation_type']));
-        $x = ($_POST['x'] ? $_POST['x'] : $data['x']);
-        $y = ($_POST['y'] ? $_POST['y'] : $data['y']);
+        $operation_type = (strtolower(isset($_POST['operation_type'])) ? strtolower($_POST['operation_type']) : strtolower($data['operation_type']));
+        $x = (isset($_POST['x']) ? $_POST['x'] : $data['x']);
+        $y = (isset($_POST['y']) ? $_POST['y'] : $data['y']);
         
         if($operation_type==='' || !in_array($operation_type, $operands)){
             die( json_encode(['error' => 'INVALID OPERATION TYPE']));
